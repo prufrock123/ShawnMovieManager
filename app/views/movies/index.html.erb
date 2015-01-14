@@ -18,7 +18,9 @@
       <td><%= movie.length %></td>
       <td><%= movie.release %></td>
       <td><%= movie.rating %></td>
-  </tr>
+      <td><%= link_to 'Show', movie_path(movie) %></td>
+      <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+    </tr>
   <% end %>
 </table>
       
