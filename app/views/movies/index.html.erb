@@ -1,0 +1,22 @@
+<h1>Movie Collection</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Format</th>
+    <th>Length</th>
+    <th>Release year</th>
+    <th>Rating</th>
+  </tr>
+  
+  <% @movies.each do |movie| %>
+    <tr>
+      <td><%= movie.title %></td>
+      <td><%= movie.format %></td>
+      <td><%= movie.length %></td>
+      <td><%= movie.release %></td>
+      <td><%= movie.rating %></td>
+  </tr>
+  <% end %>
+</table>
+      
