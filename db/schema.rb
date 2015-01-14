@@ -15,8 +15,7 @@ ActiveRecord::Schema.define(version: 20150113201222) do
 
   create_table "movies", force: true do |t|
     t.string   "title"
-    t.string   "f"
-    t.string   "ormat"
+    t.string   "format"
     t.integer  "length",     limit: 500
     t.integer  "release",    limit: 2100
     t.integer  "rating",     limit: 5

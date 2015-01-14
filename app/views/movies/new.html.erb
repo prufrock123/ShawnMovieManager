@@ -1,0 +1,30 @@
+<%= form_for :movie, url: movies_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :format %><br>
+    <%= f.text_field :format %>
+  </p>
+
+  <p>
+    <%= f.label :length %><br>
+    <%= f.text_field :length %>
+  </p>
+
+  <p>
+    <%= f.label :release %><br>
+    <%= f.text_field :release %>
+  </p>
+
+  <p>
+    <%= f.label :rating %><br>
+    <%= f.text_field :rating %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -23,7 +23,9 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'railsstrap'
 
-gem 'bootstrap-sass', '3.2.0.0'
+gem 'less-rails'
+
+# gem 'bootstrap-sass', '3.2.0.0'
 
 gem 'autoprefixer-rails'
 

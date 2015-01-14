@@ -82,5 +82,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   # Precompile assets for FontAwesome support.
-  Rails.application.config.assets.precompile += %w(.svg .eot .woff .ttf)
+  #Rails.application.config.assets.precompile += %w(.svg .eot .woff .ttf)
 end
