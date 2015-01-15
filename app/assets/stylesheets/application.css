@@ -16,3 +16,17 @@
 
 /* @import "bootstrap-sprockets";
 @import "bootstrap"; */
+
+
+#navMenu {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#navMenu p {
+  color: white;
+}
+
+#navMenu a {
+  color: white;
+}
