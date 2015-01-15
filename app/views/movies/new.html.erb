@@ -22,7 +22,8 @@
     <%= f.label :length, class: "col-sm-2 control-label" %>
   </h4>
     <div class="col-sm-8">
-    <%= f.text_field :length, class: "form-control"  %>
+<!--     <%= f.text_field :length, class: "form-control"  %> -->
+      <%= f.time_select :length, prompt: {hour: "Choose hour", minute: "Choose minute"} %>
   </div>
 </div>
 
