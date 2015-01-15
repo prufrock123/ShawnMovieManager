@@ -4,6 +4,9 @@ class Movie < ActiveRecord::Base
   validates :length, presence: true
   validates :release, presence: true, numericality: { only_integer: true }
 #   validates :rating, presence: true, numericality: { only_integer: true }
+  include RankedModel
+  
+  ranks :row_order
   
   
 end

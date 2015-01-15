@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/sortable
+//= require jquery-ui/effect-highlight
+//= require jquery-ui/effect-slide
 //= require bootstrap/dist/js/bootstrap
 //= require turbolinks
 //= require_tree .

@@ -24,6 +24,10 @@ gem 'railsstrap'
 
 gem 'less-rails'
 
+gem 'ranked-model'
+
+gem 'jquery-ui-rails'
+
 # gem 'bootstrap-sass', '3.2.0.0'
 
 gem 'autoprefixer-rails'

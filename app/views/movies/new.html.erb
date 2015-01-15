@@ -1,26 +1,43 @@
-<%= form_for :movie, url: movies_path do |f| %>
-<h4>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-</h4>
+<%= form_for :movie, url: movies_path, html: {:class => "form-horizontal"}  do |f| %>
+<div class="form-group">
+  <h4>
+    <%= f.label :title, class: "col-sm-2 control-label" %>
+  </h4>
+    <div class="col-sm-8">
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+</div>
  
-<h4>
-    <%= f.label :format %><br>
+<div class="form-group">
+  <h4>
+    <%= f.label :format, class: "col-sm-2 control-label" %>
+  </h4>
+    <div class="col-sm-8">
     <%= f.select(:format, options_for_select([['VHS', 'VHS'], ['DVD', 'DVD'], ['Streaming', 'Streaming']]), {}, {class: "form-control"}) %>
-</h4>
+  </div>
+</div>
 
-<h4>
-    <%= f.label :length %><br>
-    <%= f.text_field :length %>
-</h4>
+<div class="form-group">
+  <h4>
+    <%= f.label :length, class: "col-sm-2 control-label" %>
+  </h4>
+    <div class="col-sm-8">
+    <%= f.text_field :length, class: "form-control"  %>
+  </div>
+</div>
 
+<div class="form-group">
+  <h4>
+  <%= f.label :release, class: "col-sm-2 control-label" %></h4>
+    <div class="col-sm-8">
+    <%= f.text_field :release, class: "form-control"  %>
+  </div>
+</div>
 
-<h4>
-    <%= f.label :release %></h4>
-    <%= f.text_field :release %>
+<div class="form-group">
+  <h4 class="col-sm-2 control-label">Rating</h4>
+      <div class="col-sm-8">
 
-
-  <h4>Rating</h4>
     <%= f.radio_button :rating, "1" %>
     <%= f.label :rating, "1", :value => 1 %>
     
@@ -35,11 +52,16 @@
 
         <%= f.radio_button :rating, "5" %>
     <%= f.label :rating, "5", :value => 5 %>
+  </div>
+</div>
     
 
-  <p>
-    <%= f.submit %>
-  </p>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit "Create", class: "btn btn-default" %>
+  </div>
+</div>
+
 <% end %>
 
 <%= link_to 'Back', movies_path %>

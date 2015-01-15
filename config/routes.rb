@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   
   get 'welcome/index'
 
-  resources :movies
+  resources :movies do
+    post :update_row_order, on: :collection
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

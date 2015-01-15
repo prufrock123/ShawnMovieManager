@@ -2,26 +2,28 @@
 
 <%= link_to 'New Movie Collection', new_movie_path %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Format</th>
-    <th>Length</th>
-    <th>Release year</th>
-    <th>Rating</th>
-  </tr>
-  
-  <% @movies.each do |movie| %>
+<div class="table-responsive">
+  <table class="table table-hover" id="sortable">
     <tr>
-      <td><%= movie.title %></td>
-      <td><%= movie.format %></td>
-      <td><%= movie.length %></td>
-      <td><%= movie.release %></td>
-      <td><%= movie.rating %></td>
-      <td><%= link_to 'Show', movie_path(movie) %></td>
-      <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-      <td><%= link_to 'Delete', movie_path(movie), method: :delete, data: { confirm: 'You sure about this chef?' } %></td>
+      <th><%= link_to "Title", :sort => "title" %></th>
+      <th><%= link_to "Format", :sort => "format" %></th>
+      <th><%= link_to "Length", :sort => "length" %></th>
+      <th><%= link_to "Release year", :sort => "release" %></th>
+      <th><%= link_to "Rating", :sort => "rating" %></th>
     </tr>
-  <% end %>
-</table>
+
+    <% @movies.each do |movie| %>
+    <tr data-item-id=<%= "#{movie.id}" %> class="item">
+        <td><%= movie.title %></td>
+        <td><%= movie.format %></td>
+        <td><%= movie.length %></td>
+        <td><%= movie.release %></td>
+        <td><%= movie.rating %></td>
+      <td><%= link_to 'Show', movie_path(movie), :class => 'btn btn-default pull-right' %></td>
+        <td><%= link_to 'Edit', edit_movie_path(movie), :class => 'btn btn-default pull-right' %></td>
+        <td><%= link_to 'Delete', movie_path(movie), method: :delete, data: { confirm: 'You sure about this chef?' }, :class => 'btn btn-default pull-right' %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
       

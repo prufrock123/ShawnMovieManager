@@ -1,7 +1,15 @@
 class MoviesController < ApplicationController
   
   def index
-    @movies = Movie.all
+    @movies = Movie.order(params[:sort])
+  end
+  
+  def update_row_order
+    @movie = Movie.find(movie_params[:id])
+    @movie.row_order_position = movie_params[:row_order_position]
+    @movie.save
+    
+    render nothing: true
   end
   
   def new
