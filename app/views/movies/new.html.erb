@@ -1,28 +1,41 @@
 <%= form_for :movie, url: movies_path do |f| %>
-  <p>
+<h4>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
-  </p>
+</h4>
  
-  <p>
+<h4>
     <%= f.label :format %><br>
-    <%= f.text_field :format %>
-  </p>
+    <%= f.select(:format, options_for_select([['VHS', 'VHS'], ['DVD', 'DVD'], ['Streaming', 'Streaming']]), {}, {class: "form-control"}) %>
+</h4>
 
-  <p>
+<h4>
     <%= f.label :length %><br>
     <%= f.text_field :length %>
-  </p>
+</h4>
 
-  <p>
-    <%= f.label :release %><br>
+
+<h4>
+    <%= f.label :release %></h4>
     <%= f.text_field :release %>
-  </p>
 
-  <p>
-    <%= f.label :rating %><br>
-    <%= f.text_field :rating %>
-  </p>
+
+  <h4>Rating</h4>
+    <%= f.radio_button :rating, "1" %>
+    <%= f.label :rating, "1", :value => 1 %>
+    
+        <%= f.radio_button :rating, "2" %>
+    <%= f.label :rating, "2", :value => 2 %>
+
+        <%= f.radio_button :rating, "3" %>
+    <%= f.label :rating, "3", :value => 3 %>
+
+        <%= f.radio_button :rating, "4" %>
+    <%= f.label :rating, "4", :value => 4 %>
+
+        <%= f.radio_button :rating, "5" %>
+    <%= f.label :rating, "5", :value => 5 %>
+    
 
   <p>
     <%= f.submit %>

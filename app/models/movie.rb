@@ -3,7 +3,7 @@ class Movie < ActiveRecord::Base
   validates :format, presence: true
   validates :length, presence: true
   validates :release, presence: true, numericality: { only_integer: true }
-  validates :rating, presence: true, numericality: { only_integer: true }
+#   validates :rating, presence: true, numericality: { only_integer: true }
   
   
 end

@@ -5,7 +5,7 @@ class CreateMovies < ActiveRecord::Migration
       t.string :format
       t.time :length
       t.integer :release
-      t.integer :rating
+      t.integer :rating, :default => nil
 
       t.timestamps
     end
