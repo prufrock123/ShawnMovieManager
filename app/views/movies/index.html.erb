@@ -1,29 +1,39 @@
 <h1>Movie Collection</h1>
 
-<%= link_to 'New Movie', new_movie_path %>
 
-<div class="table-responsive">
-  <table class="table table-hover" id="sortable">
-    <tr>
-      <th><%= link_to "Title", :sort => "title" %></th>
-      <th><%= link_to "Format", :sort => "format" %></th>
-      <th><%= link_to "Length", :sort => "length" %></th>
-      <th><%= link_to "Release year", :sort => "release" %></th>
-      <th><%= link_to "Rating", :sort => "rating" %></th>
-    </tr>
+<div class="row">
+  <div class="col-sm-2 col-sm-offset-5">
+    <button type="button" id="newMovie" class="btn btn-success" aria-label="Left Align">
+      <span class="glyphicon glyphicon-star" aria-hidden="true"><%= link_to 'New Movie', new_movie_path %></span>
+    </button>
+  </div>
+</div>
 
-    <% @movies.each do |movie| %>
-    <tr data-item-id=<%= "#{movie.id}" %> class="item">
-        <td><%= movie.title %></td>
-        <td><%= movie.format %></td>
-        <td><%= movie.length.strftime("%H:%M") %></td>
-        <td><%= movie.release %></td>
-        <td><%= movie.rating %></td>
-      <td><%= link_to 'Show', movie_path(movie), :class => 'btn btn-default pull-right' %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie), :class => 'btn btn-default pull-right' %></td>
-        <td><%= link_to 'Delete', movie_path(movie), method: :delete, data: { confirm: 'You sure about this chef?' }, :class => 'btn btn-default pull-right' %></td>
-      </tr>
-    <% end %>
-  </table>
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1"
+    <div class="table-responsive">
+      <table class="table table-hover" id="sortable">
+        <tr>
+          <th id="topTable"><%= link_to "Title", :sort => "title" %></th>
+          <th><%= link_to "Format", :sort => "format" %></th>
+          <th><%= link_to "Length", :sort => "length" %></th>
+          <th><%= link_to "Release year", :sort => "release" %></th>
+          <th><%= link_to "Rating", :sort => "rating" %></th>
+        </tr>
+
+        <% @movies.each do |movie| %>
+        <tr data-item-id=<%= "#{movie.id}" %> class="item">
+            <td><%= movie.title %></td>
+            <td><%= movie.format %></td>
+            <td><%= movie.length.strftime("%H:%M") %></td>
+            <td><%= movie.release %></td>
+            <td><%= movie.rating %></td>
+          <td><%= link_to 'Show', movie_path(movie), :class => 'btn btn-default pull-right' %></td>
+            <td><%= link_to 'Edit', edit_movie_path(movie), :class => 'btn btn-default pull-right' %></td>
+            <td><%= link_to 'Delete', movie_path(movie), method: :delete, data: { confirm: 'You sure about this chef?' }, :class => 'btn btn-default pull-right' %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
 </div>
       
